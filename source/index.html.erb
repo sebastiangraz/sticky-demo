@@ -47,7 +47,7 @@ title: Canon
   <h1 class="mt4 mb4 tungsten ttu f1">Compact Digital Cameras</h1>
   <div class="main-content flex flex-row justify-between">
       <div class="sidebar nevada w-20">
-          <div class="sidebar__inner">
+          <div class="sidebar__inner cf">
               <div class="mb3 pa3 bt b--black-10">Filter by:</div>
           <% (1..8).each do |i| %>
             <div class="mb4">
@@ -78,7 +78,7 @@ title: Canon
             </div>
           </div>
           <div data-role="PRODUCTLISTING FLUSHBORDER">
-            <% (1..3).each do |i| %>
+            <% (1..20).each do |i| %>
               <div class="flex flex-column" data-role="TILE">
                 <div class="aspect-ratio aspect-ratio--1x1 bg-near-white z--1">
                   <div class="aspect-ratio--object flex items-center pa4">
@@ -115,7 +115,7 @@ title: Canon
 <script type="text/javascript">
   var sidebar = new StickySidebar('.sidebar', {
     topSpacing: 32,
-    resizeSensor: true,
+    resizeSensor: false,
     bottomSpacing: 32,
     containerSelector: '.main-content',
     innerWrapperSelector: '.sidebar__inner'
