@@ -1,0 +1,107 @@
+---
+title: Canon
+---
+<nav>
+  <div class="ph3 bb b--black-10 flex flex-row justify-between h3 items-center">
+    <a class="w4 dib" href="/"> <img src="images/logo.svg" class="db" alt=""> </a>
+    <div data-role="MAINNAV">
+      <ul class="flex list ttu f6 pa0 ma0">
+        <li class="ph2"><a href="#">Official Store</a></li>
+        <li class="ph2"><a href="#">Services & Apps</a></li>
+        <li class="ph2"><a href="#">Get Inspired</a></li>
+        <li class="ph2"><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div class="flex">
+      <div class="mr4">Search<span class="red">_</span></div>
+      <ul class="flex list pa0 ma0">
+        <li class="ml4">A</li>
+        <li class="ml4">H</li>
+        <li class="ml4">B</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bb b--black-10 pv3">
+    <ul class="flex list row flex-row justify-between f6 pa0">
+      <li><a href="#">Cameras</a></li>
+      <li><a href="#">Lenses</a></li>
+      <li><a href="#">Camcorders</a></li>
+      <li><a href="#">Printers & Office</a></li>
+      <li><a href="#">Accessories</a></li>
+      <li><a href="#">Ink, Toner & Paper</a></li>
+      <li><a href="#">Buying Guides</a></li>
+      <li><a href="#">Offers</a></li>
+    </ul>
+  </div>
+  <div class="row f6 nevada mv3">
+    <ul data-role="BREADCRUMB" class="ma0 pa0 list flex">
+      <li class="mr3"><a href="#">Home</a></li>
+      <li class="mr3"><a href="#">Store</a></li>
+      <li class="mr3"><a href="#">Cameras</a></li>
+      <li class="mr3"><a href="#">Compact Digital Cameras</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <h1 class="mt4 mb4">Compact Digital Cameras</h1>
+  <div class="main-content flex flex-row justify-between">
+      <div class="sidebar nevada w-25">
+          <div class="sidebar__inner">
+              <p class="ma0 pa3 ba b--black-10">Filter by:</p>
+          <% (1..5).each do |i| %>
+            <div class="">
+              <p class="f6 bg-black-10 ma0 pv2 ph3 f7">Category</p>
+              <ul class="list pa0 ma0">
+                <% (1..5).each do |i| %>
+                  <li class="pa3 bb b--black-10 f6">Filter Option (14)</li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          </div>
+      </div>
+      <div class="content pl4 w-75">
+          <div class="pa3 ba b--black-10 mb3">
+            <div class="flex">
+              <span class="ph2 pv1 ba b--black-10">Grid</span>
+              <span class="ph2 pv1 ba b--black-10">List</span>
+            </div>
+          </div>
+          <div data-role="PRODUCTLISTING">
+            <% (1..20).each do |i| %>
+              <div data-role="TILE">
+                <div class="aspect-ratio aspect-ratio--1x1 bg-black-10">
+                  <div class="aspect-ratio--object flex items-center pa4">
+                    <img src="images/camera.png" alt="">
+                  </div>
+                </div>
+                <p>Canon PowerShot G1 X Mark III</p>
+                <span class="promotion ttu bg-cardinal-pink white dib white-space pa2 f7">Save £80 at checkout</span>
+                <ul class="f7 pl3">
+                  <li class="mb2">3x fast aperture optical zoom</li>
+                  <li class="mb2">24.2 MP APS-C Sensor</li>
+                  <li class="mb2">Dual Pixel CMOS AF</li>
+                </ul>
+                <p class="f4">£ 1,089.99</p>
+                <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill ttu f6">Add to basket</a>
+              </div>
+            <% end %>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="dib w-100 h5 bg-black-20 mt6" data-role="FOOTER">
+  <div class="pa5 row">
+    Footer
+  </div>
+</div>
+
+<script type="text/javascript">
+  var sidebar = new StickySidebar('.sidebar', {
+    topSpacing: 32,
+    bottomSpacing: 32,
+    containerSelector: '.main-content',
+    innerWrapperSelector: '.sidebar__inner'
+  });
+</script>
