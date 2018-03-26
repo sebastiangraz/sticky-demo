@@ -9,6 +9,25 @@
   src:  url('/fonts/Gotham-Book.woff') format('woff'),
 }
 
+@font-face {
+  font-family: 'tungsten';
+  src:  url('/fonts/Tungsten-Semibold.woff') format('woff'),
+}
+.sidebar{
+    will-change: min-height;
+}
+
+.sidebar__inner{
+    transform: translate(0, 0); /* For browsers don't support translate3d. */
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+}
+.tungsten {
+  font-family: 'tungsten', 'gotham', sans-serif;
+}
+.mt-auto {
+  margin-top: auto;
+}
 body {
   font-family: gotham;
 }
@@ -34,6 +53,14 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+[data-role*="GROUPPILL"] {
+  & > *:last-child {
+    border-radius: 0 3px 3px 0;
+  }
+  & > *:first-child {
+    border-radius: 3px 0 0 3px;
+  }
+}
 [data-role="BREADCRUMB"] {
   li:not(:last-child)::after{
     content: "›";
@@ -42,6 +69,10 @@ a {
   li:last-child::after{
     content: "";
   }
+}
+
+.z--1 {
+  z-index: -1;
 }
 
 .nevada {

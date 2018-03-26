@@ -13,11 +13,11 @@ title: Canon
       </ul>
     </div>
     <div class="flex">
-      <div class="mr4">Search<span class="red">_</span></div>
+      <div class="mr4"><i class="nevada mr2 fas fa-search"></i><span class="nevada">Search</span><span class="red">_</span></div>
       <ul class="flex list pa0 ma0">
-        <li class="ml4">A</li>
-        <li class="ml4">H</li>
-        <li class="ml4">B</li>
+        <li class="ml4"><i class="nevada mr2 fas fa-user"></i></li>
+        <li class="ml4"><i class="nevada mr2 fas fa-heart"></i></li>
+        <li class="ml4"><i class="nevada mr2 fas fa-shopping-basket"></i></li>
       </ul>
     </div>
   </div>
@@ -44,17 +44,17 @@ title: Canon
 </nav>
 
 <div class="row">
-  <h1 class="mt4 mb4">Compact Digital Cameras</h1>
+  <h1 class="mt4 mb4 tungsten ttu f1">Compact Digital Cameras</h1>
   <div class="main-content flex flex-row justify-between">
-      <div class="sidebar nevada w-25">
+      <div class="sidebar nevada w-20">
           <div class="sidebar__inner">
-              <p class="ma0 pa3 ba b--black-10">Filter by:</p>
-          <% (1..5).each do |i| %>
-            <div class="">
-              <p class="f6 bg-black-10 ma0 pv2 ph3 f7">Category</p>
+              <div class="mb3 pa3 bt b--black-10">Filter by:</div>
+          <% (1..8).each do |i| %>
+            <div class="mb4">
+              <p class="f6 bb b--black-20 ttu black ma0 pv2 ph3 f7"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></p>
               <ul class="list pa0 ma0">
                 <% (1..5).each do |i| %>
-                  <li class="pa3 bb b--black-10 f6">Filter Option (14)</li>
+                  <li class="ph3 pv2 f6 bb b--black-10"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
                 <% end %>
               </ul>
             </div>
@@ -62,36 +62,43 @@ title: Canon
           </div>
       </div>
       <div class="content pl4 w-75">
-          <div class="pa3 ba b--black-10 mb3 flex flex-row justify-between">
-            <div class="flex" data-role="FLUSHBORDER">
-              <span class="ph2 pv1">Grid</span>
-              <span class="ph2 pv1">List</span>
+          <div class="mb4 flex flex-row justify-between bt b--black-10 pt4 items-center">
+            <div class="flex" data-role="FLUSHBORDER GROUPPILL">
+              <span class="ph2 pv1 flex items-center"><i class="mr2 nevada fas fa-th"></i> <span>Grid</span></span>
+              <span class="ph2 pv1 flex items-center"><i class="mr2 nevada fas fa-th-list"></i> <span>List</span></span>
             </div>
-            <div class="flex" data-role="FLUSHBORDER">
-              <span class="ph2 pv1 black-20">‹</span>
-              <span class="ph2 pv1 black-20">1</span>
-              <span class="ph2 pv1">2</span>
-              <span class="ph2 pv1 red">›</span>
+            <div class="flex" data-role="FLUSHBORDER GROUPPILL">
+              <span class="v-mid ph2 pv1 black-20">‹</span>
+              <span class="v-mid ph2 pv1 black-20">1</span>
+              <span class="v-mid ph2 pv1">2</span>
+              <span class="v-mid ph2 pv1 red">›</span>
+            </div>
+            <div>
+              <span>Sort By: </span><a href="#" class="nevada">New In</a>
             </div>
           </div>
           <div data-role="PRODUCTLISTING FLUSHBORDER">
-            <% (1..20).each do |i| %>
-              <div data-role="TILE">
-                <div class="aspect-ratio aspect-ratio--1x1 bg-black-10">
+            <% (1..3).each do |i| %>
+              <div class="flex flex-column" data-role="TILE">
+                <div class="aspect-ratio aspect-ratio--1x1 bg-near-white z--1">
                   <div class="aspect-ratio--object flex items-center pa4">
-                    <img src="images/camera.png" alt="">
+                    <img src="images/camera<%= rand(1..4) %>.png" alt="">
                   </div>
                 </div>
-                <div class="pt2 pb5 ph3">
-                  <p>Canon PowerShot G1 X Mark III</p>
+                <div class="ph3">
+                  <p><%= randomword(["Canon PowerShot G1 X Mark III Extra long title that go over 3 lines", "Canon PowerShot G1 X Mark III", "Canon PowerShot SX730 HS Silver", "Canon PowerShot G9 X Mark II Silver"]) %></p>
+                  <% if rand(2) == 1  %>
                   <span class="promotion ttu bg-cardinal-pink white dib white-space pa2 f7">Save £80 at checkout</span>
+                  <% end %>
                   <ul class="f7 pl3">
                     <li class="mb2">3x fast aperture optical zoom</li>
                     <li class="mb2">24.2 MP APS-C Sensor</li>
                     <li class="mb2">Dual Pixel CMOS AF</li>
                   </ul>
-                  <p class="f4">£ 1,089.99</p>
-                  <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill ttu f6">Add to basket</a>
+                </div>
+                <div class="ph3 pb4 mt-auto">
+                  <p class="f4">£1,089.99</p>
+                  <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill ttu f6"><i class="olive mr2 fas fa-shopping-basket"></i> Add to basket</a>
                 </div>
               </div>
             <% end %>
@@ -108,6 +115,7 @@ title: Canon
 <script type="text/javascript">
   var sidebar = new StickySidebar('.sidebar', {
     topSpacing: 32,
+    resizeSensor: true,
     bottomSpacing: 32,
     containerSelector: '.main-content',
     innerWrapperSelector: '.sidebar__inner'
