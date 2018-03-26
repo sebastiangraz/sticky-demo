@@ -62,13 +62,19 @@ title: Canon
           </div>
       </div>
       <div class="content pl4 w-75">
-          <div class="pa3 ba b--black-10 mb3">
-            <div class="flex">
-              <span class="ph2 pv1 ba b--black-10">Grid</span>
-              <span class="ph2 pv1 ba b--black-10">List</span>
+          <div class="pa3 ba b--black-10 mb3 flex flex-row justify-between">
+            <div class="flex" data-role="FLUSHBORDER">
+              <span class="ph2 pv1">Grid</span>
+              <span class="ph2 pv1">List</span>
+            </div>
+            <div class="flex" data-role="FLUSHBORDER">
+              <span class="ph2 pv1 black-20">‹</span>
+              <span class="ph2 pv1 black-20">1</span>
+              <span class="ph2 pv1">2</span>
+              <span class="ph2 pv1 red">›</span>
             </div>
           </div>
-          <div data-role="PRODUCTLISTING">
+          <div data-role="PRODUCTLISTING FLUSHBORDER">
             <% (1..20).each do |i| %>
               <div data-role="TILE">
                 <div class="aspect-ratio aspect-ratio--1x1 bg-black-10">
@@ -76,15 +82,17 @@ title: Canon
                     <img src="images/camera.png" alt="">
                   </div>
                 </div>
-                <p>Canon PowerShot G1 X Mark III</p>
-                <span class="promotion ttu bg-cardinal-pink white dib white-space pa2 f7">Save £80 at checkout</span>
-                <ul class="f7 pl3">
-                  <li class="mb2">3x fast aperture optical zoom</li>
-                  <li class="mb2">24.2 MP APS-C Sensor</li>
-                  <li class="mb2">Dual Pixel CMOS AF</li>
-                </ul>
-                <p class="f4">£ 1,089.99</p>
-                <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill ttu f6">Add to basket</a>
+                <div class="pt2 pb5 ph3">
+                  <p>Canon PowerShot G1 X Mark III</p>
+                  <span class="promotion ttu bg-cardinal-pink white dib white-space pa2 f7">Save £80 at checkout</span>
+                  <ul class="f7 pl3">
+                    <li class="mb2">3x fast aperture optical zoom</li>
+                    <li class="mb2">24.2 MP APS-C Sensor</li>
+                    <li class="mb2">Dual Pixel CMOS AF</li>
+                  </ul>
+                  <p class="f4">£ 1,089.99</p>
+                  <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill ttu f6">Add to basket</a>
+                </div>
               </div>
             <% end %>
           </div>

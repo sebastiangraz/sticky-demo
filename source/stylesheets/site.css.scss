@@ -20,16 +20,19 @@ a {
     color: #111;
   }
 }
+[data-role*="FLUSHBORDER"] {
+  & > * {
+    box-shadow: 1px 0 0 0 #eee, 0 1px 0 0 #eee, 1px 1px 0 0 #eee, 1px 0 0 0 #eee inset, 0 1px 0 0 #eee inset;
+  }
+}
 [data-role="MAINNAV"] {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-[data-role="PRODUCTLISTING"] {
+[data-role*="PRODUCTLISTING"] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 1rem;
-  grid-row-gap: 3rem;
 }
 [data-role="BREADCRUMB"] {
   li:not(:last-child)::after{
