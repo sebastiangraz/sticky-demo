@@ -1,8 +1,17 @@
 .row {
-  width: 84%;
+  width: 88%;
   margin: 0 auto;
   max-width: 72rem;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.fit-contain {
+  object-fit: contain;
+}
+
 
 @font-face {
   font-family: 'gotham';
@@ -30,6 +39,7 @@
 }
 body {
   font-family: gotham;
+  // -webkit-font-smoothing:antialiased;
 }
 
 a {
@@ -49,9 +59,32 @@ a {
     left: 50%;
     transform: translateX(-50%);
 }
+[data-role="SECONDARYNAV"] {
+  a {
+    position: relative;
+  }
+  a.active {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      display: inline-block;
+      height: 2px;
+      background: #c00;
+      left: 0;
+      bottom: calc(-1rem - 1px);
+    }
+  }
+}
 [data-role*="PRODUCTLISTING"] {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  @media screen and (min-width: 52em) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 60em) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 [data-role*="GROUPPILL"] {
   & > *:last-child {

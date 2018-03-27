@@ -3,69 +3,81 @@ title: Canon
 ---
 <nav>
   <div class="ph3 bb b--black-10 flex flex-row justify-between h3 items-center">
-    <a class="w4 dib" href="/"> <img src="images/logo.svg" class="db" alt=""> </a>
-    <div data-role="MAINNAV">
+    <a class="w3 w4-ns dib flex items-center" href="/">
+      <div class="db db-m dn-l"><i class="f4 mh3 fas fa-bars"></i></div>
+      <img src="images/logo.svg" class="db" alt="">
+    </a>
+    <div data-role="MAINNAV" class="dn dn-m db-l">
       <ul class="flex list ttu f6 pa0 ma0">
-        <li class="ph2"><a href="#">Official Store</a></li>
+        <li class="ph2"><a href="#">Store</a></li>
         <li class="ph2"><a href="#">Services & Apps</a></li>
         <li class="ph2"><a href="#">Get Inspired</a></li>
         <li class="ph2"><a href="#">Support</a></li>
       </ul>
     </div>
     <div class="flex">
-      <div class="mr4"><i class="nevada mr2 fas fa-search"></i><span class="nevada">Search</span><span class="red">_</span></div>
+      <div class="mr0 mr0-m mr2-l"><i class="f7 nevada mr2 fas fa-search"></i><span class="nevada dn dn-m di-l">Search<span class="red">_</span></span></div>
       <ul class="flex list pa0 ma0">
-        <li class="ml4"><i class="nevada mr2 fas fa-user"></i></li>
-        <li class="ml4"><i class="nevada mr2 fas fa-heart"></i></li>
-        <li class="ml4"><i class="nevada mr2 fas fa-shopping-basket"></i></li>
+        <li class="ml3 ml4-ns"><i class="f7 nevada mr2 fas fa-user"></i></li>
+        <li class="ml3 ml4-ns"><i class="f7 nevada mr2 fas fa-heart"></i></li>
+        <li class="ml3 ml4-ns"><i class="f7 nevada mr2 fas fa-shopping-basket"></i></li>
       </ul>
     </div>
   </div>
   <div class="bb b--black-10 pv3">
-    <ul class="flex list row flex-row justify-between f6 pa0">
-      <li><a href="#">Cameras</a></li>
+    <ul data-role="SECONDARYNAV" class="flex list row flex-row justify-between f6 pa0">
+      <li><a class="active" href="#">Cameras</a></li>
       <li><a href="#">Lenses</a></li>
       <li><a href="#">Camcorders</a></li>
-      <li><a href="#">Printers & Office</a></li>
-      <li><a href="#">Accessories</a></li>
-      <li><a href="#">Ink, Toner & Paper</a></li>
-      <li><a href="#">Buying Guides</a></li>
-      <li><a href="#">Offers</a></li>
+
+      <li class="dn dn-m db-l"><a href="#">Printers & Office</a></li>
+      <li class="dn db-m db-l"><a href="#">Accessories</a></li>
+      <li class="dn dn-m db-l"><a href="#">Ink, Toner & Paper</a></li>
+      <li class="dn dn-m db-l"><a href="#">Buying Guides</a></li>
+      <li class="dn db-m db-l"><a href="#">Offers</a></li>
+
+      <li class="db db-m dn-l"><i class="f7 nevada mr2 fas fa-bars"></i></li>
     </ul>
   </div>
-  <div class="row f6 nevada mv3">
-    <ul data-role="BREADCRUMB" class="ma0 pa0 list flex">
-      <li class="mr3"><a href="#">Home</a></li>
-      <li class="mr3"><a href="#">Store</a></li>
-      <li class="mr3"><a href="#">Cameras</a></li>
-      <li class="mr3"><a href="#">Compact Digital Cameras</a></li>
-    </ul>
+  <div class="nowrap overflow-x-auto mv3">
+    <div class="row">
+      <ul data-role="BREADCRUMB" class="ma0 f6 nevada pa0 list flex">
+        <li class="pr3"><a href="#">Home</a></li>
+        <li class="pr3"><a href="#">Store</a></li>
+        <li class="pr3"><a href="#">Cameras</a></li>
+        <li class="pr3"><a href="#">Compact Digital Cameras</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
 <div class="row">
-  <h1 class="mt4 mb4 tungsten ttu f1">Compact Digital Cameras</h1>
-  <div class="main-content flex flex-row justify-between">
-      <div class="sidebar nevada w-20">
-          <div class="sidebar__inner cf">
-              <div class="mb3 pa3 bt b--black-10">Filter by:</div>
+  <h1 class="mt4 mb4 tungsten ttu f2 f1-ns">Compact Digital Cameras</h1>
+  <div class="main-content flex-ns flex-row justify-between">
+    <div class="sidebar nevada w-100 w-40-m w-20-l">
+      <div class="sidebar__inner cf">
+        <div class="mb3 pa3 bt b--black-10">Filter by:</div>
+        <div class="dn db-ns">
           <% (1..8).each do |i| %>
             <div class="mb4">
               <p class="f6 bb b--black-20 ttu black ma0 pv2 ph3 f7"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></p>
               <ul class="list pa0 ma0">
                 <% (1..5).each do |i| %>
-                  <li class="ph3 pv2 f6 bb b--black-10"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
+                  <li class="ph3 pv2 f7 f6-ns bb b--black-10"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
                 <% end %>
               </ul>
             </div>
           <% end %>
-          </div>
+        </div>
       </div>
-      <div class="content pl4 w-75">
+      </div>
+      <div class="content pl4-ns w-100 w-60-m w-80-l">
           <div class="mb4 flex flex-row justify-between bt b--black-10 pt4 items-center">
-            <div class="flex" data-role="FLUSHBORDER GROUPPILL">
-              <span class="ph2 pv1 flex items-center"><i class="mr2 nevada fas fa-th"></i> <span>Grid</span></span>
-              <span class="ph2 pv1 flex items-center"><i class="mr2 nevada fas fa-th-list"></i> <span>List</span></span>
+            <div class="dn dn-m db-l">
+              <div class="flex" data-role="FLUSHBORDER GROUPPILL">
+                <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th"></i> <span>Grid</span></span>
+                <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th-list"></i> <span>List</span></span>
+              </div>
             </div>
             <div class="flex" data-role="FLUSHBORDER GROUPPILL">
               <span class="v-mid ph2 pv1 black-20">‹</span>
@@ -74,21 +86,36 @@ title: Canon
               <span class="v-mid ph2 pv1 red">›</span>
             </div>
             <div>
-              <span>Sort By: </span><a href="#" class="nevada">New In</a>
+              <span>Sort By </span>
+              <select class="f7 input-reset ba b--black-10 bg-white ph2 pv1">
+                <option>New In</option>
+                <option>Display Name A-Z</option>
+                <option>Display Name Z-A</option>
+                <option>Price Low to High</option>
+                <option>Price High to Low</option>
+              </select>
             </div>
           </div>
           <div data-role="PRODUCTLISTING FLUSHBORDER">
             <% (1..20).each do |i| %>
-              <div class="flex flex-column" data-role="TILE">
-                <div class="aspect-ratio aspect-ratio--1x1 bg-near-white z--1">
-                  <div class="aspect-ratio--object flex items-center pa4">
-                    <img src="images/camera<%= rand(1..4) %>.png" alt="">
+              <div class="flex flex-column mb3 mb0-ns" data-role="TILE">
+                <div class="aspect-ratio-ns aspect-ratio--1x1-ns bg-near-white z--1">
+                  <div class="aspect-ratio--object-ns flex items-center pa2 pa3-m pa4-l">
+                    <img class="h4 h-auto-m h-auto-l fit-contain w-100" src="images/camera<%= rand(1..4) %>.png" alt="">
                   </div>
                 </div>
                 <div class="ph3">
-                  <p><%= randomword(["Canon PowerShot G1 X Mark III Extra long title that go over 3 lines", "Canon PowerShot G1 X Mark III", "Canon PowerShot SX730 HS Silver", "Canon PowerShot G9 X Mark II Silver"]) %></p>
+                  <div class="flex mt3">
+                    <i class="f7 gold mr1 fas fa-star"></i>
+                    <i class="f7 gold mr1 fas fa-star"></i>
+                    <i class="f7 gold mr1 fas fa-star"></i>
+                    <i class="f7 gold mr1 fas fa-star"></i>
+                    <i class="f7 light-yellow mr2 fas fa-star"></i>
+                    <span class="f7">4.<%= rand(0..9) %>	(<%= rand(4..23) %>)</span>
+                  </div>
+                  <p class="mt3"><%= randomword(["Enjoy exceptional quality images, day or night with 20.3 Megapixels HS system", "Canon PowerShot G1 X Mark III Extra long title that go over 3 lines", "Canon PowerShot G1 X Mark III", "Canon PowerShot SX730 HS Silver", "Canon PowerShot G9 X Mark II Silver"]) %></p>
                   <% if rand(2) == 1  %>
-                  <span class="promotion ttu bg-cardinal-pink white dib white-space pa2 f7">Save £80 at checkout</span>
+                  <span class="promotion ttu bg-cardinal-pink white dib white-space ph2 pv1 f7">Save £80 at checkout</span>
                   <% end %>
                   <ul class="f7 pl3">
                     <li class="mb2">3x fast aperture optical zoom</li>
@@ -97,8 +124,8 @@ title: Canon
                   </ul>
                 </div>
                 <div class="ph3 pb4 mt-auto">
-                  <p class="f4">£1,089.99</p>
-                  <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill ttu f6"><i class="olive mr2 fas fa-shopping-basket"></i> Add to basket</a>
+                  <p class="f4 mv2">£1,089.99</p>
+                  <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill f6"><i class="olive mr2 fas fa-shopping-basket"></i> Add to basket</a>
                 </div>
               </div>
             <% end %>
@@ -116,6 +143,7 @@ title: Canon
   var sidebar = new StickySidebar('.sidebar', {
     topSpacing: 32,
     resizeSensor: false,
+    minWidth: 480,
     bottomSpacing: 32,
     containerSelector: '.main-content',
     innerWrapperSelector: '.sidebar__inner'
