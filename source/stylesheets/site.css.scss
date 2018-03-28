@@ -8,8 +8,15 @@
     display: none;
 }
 
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+}
 .fit-contain {
   object-fit: contain;
+}
+
+.fit-cover {
+  object-fit: cover;
 }
 
 
