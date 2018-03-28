@@ -60,8 +60,11 @@ title: Canon
         <div class="dn db-ns">
           <% (1..8).each do |i| %>
             <div class="mb4">
-              <p class="f6 bb b--black-20 ttu black ma0 pv2 ph3 f7"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></p>
-              <ul class="list pa0 ma0">
+              <p class="bb b--black-20 ttu black ma0 pv2 pl3 flex justify-between items-center">
+                <span class="f7 tracked"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></span>
+                <span data-role="TOGGLE" class="toggle dib ph2 tc br1 hover-bg-black-10"><i class="f7 nevada fas fa-angle-up"></i></span>
+              </p>
+              <ul class="list pa0 ma0" data-role="TOGGLELIST">
                 <% (1..5).each do |i| %>
                   <li class="ph3 pv2 f7 f6-ns bb b--black-10"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
                 <% end %>
@@ -72,26 +75,26 @@ title: Canon
       </div>
       </div>
       <div class="content pl4-ns w-100 w-60-m w-80-l">
-          <div class="mb4 flex flex-row justify-between bt b--black-10 pt4 items-center">
-            <div class="dn dn-m db-l">
+          <div class="mb4 flex flex-column-m flex-row-ns justify-between bt b--black-10 pt4 items-center">
+            <div class="dn dn-m db-l mb3-m">
               <div class="flex" data-role="FLUSHBORDER GROUPPILL">
-                <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th"></i> <span>Grid</span></span>
-                <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th-list"></i> <span>List</span></span>
+                <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th"></i> <span class="f7 tracked ttu">Grid</span></span>
+                <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th-list"></i> <span class="f7 tracked ttu">List</span></span>
               </div>
             </div>
-            <div class="flex" data-role="FLUSHBORDER GROUPPILL">
+            <div class="flex mb3-m" data-role="FLUSHBORDER GROUPPILL">
               <span class="v-mid ph2 pv1 black-20">‹</span>
               <span class="v-mid ph2 pv1 black-20">1</span>
               <span class="v-mid ph2 pv1">2</span>
               <span class="v-mid ph2 pv1 red">›</span>
             </div>
             <div>
-              <span>Sort By </span>
+              <span class="f7 tracked ttu">Sort By </span>
               <select class="f7 input-reset ba b--black-10 bg-white ph2 pv1">
+                <option>Price Low to High</option>
                 <option>New In</option>
                 <option>Display Name A-Z</option>
                 <option>Display Name Z-A</option>
-                <option>Price Low to High</option>
                 <option>Price High to Low</option>
               </select>
             </div>
@@ -142,7 +145,7 @@ title: Canon
 <script type="text/javascript">
   var sidebar = new StickySidebar('.sidebar', {
     topSpacing: 32,
-    resizeSensor: false,
+    resizeSensor: true,
     minWidth: 480,
     bottomSpacing: 32,
     containerSelector: '.main-content',
