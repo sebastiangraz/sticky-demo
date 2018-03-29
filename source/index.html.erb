@@ -5,28 +5,16 @@ title: Canon
   <h1 class="mt4 mb4 tungsten ttu f2 f1-ns">Compact Digital Cameras</h1>
 
   <div class="main-content flex-ns flex-row justify-between">
-    <div class="sidebar nevada w-100 w-40-m w-20-l">
-      <div class="sidebar__inner cf">
-        <div class="mb3 pa3 bt b--black-10">Filter by:</div>
-        <div class="dn db-ns">
-          <% (1..8).each do |i| %>
-            <div class="mb4">
-              <p class="bb b--black-20 ttu black ma0 pv2 pl3 flex justify-between items-center">
-                <span class="f7 tracked"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></span>
-                <span data-role="TOGGLE" class="toggle dib ph2 tc br1 hover-bg-black-10"><i class="f7 nevada fas fa-angle-up"></i></span>
-              </p>
-              <ul class="list pa0 ma0" data-role="TOGGLELIST">
-                <% (1..5).each do |i| %>
-                  <li class="ph3 pv2 f7 f6-ns bb b--black-10"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
+      <div class="sidebar nevada w-100 w-40-m w-20-l">
+        <div class="sidebar__inner cf">
+          <div class="mb3 pa3 bt b--black-10">Filter by:</div>
+          <div class="dn db-ns">
+            <%= partial "partials/sidebar" %>
+          </div>
         </div>
       </div>
-      </div>
       <div class="content pl4-ns w-100 w-60-m w-80-l">
-          <div class="mb4 flex flex-column-m flex-row-ns justify-between bt b--black-10 pt4 items-center">
+          <div data-role="SORTING" class="mb4 flex flex-column-m flex-row-ns justify-between bt b--black-10 pt4 items-center">
             <div class="dn dn-m db-l mb3-m">
               <div class="flex" data-role="FLUSHBORDER GROUPPILL">
                 <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th"></i> <span class="f7 tracked ttu">Grid</span></span>
@@ -50,38 +38,9 @@ title: Canon
               </select>
             </div>
           </div>
-          <div data-role="PRODUCTLISTING FLUSHBORDER">
+          <div data-role="PRODUCTLISTING">
             <% (1..20).each do |i| %>
-              <div class="flex flex-column mb3 mb0-ns" data-role="TILE">
-                <div class="aspect-ratio-ns aspect-ratio--1x1-ns bg-near-white z--1">
-                  <div class="aspect-ratio--object-ns flex items-center pa2 pa3-m pa4-l overflow-hidden">
-                    <img class=" h4 h-auto-m h-auto-l fit-contain w-100" src="images/camera<%= rand(1..4) %>.png" alt="">
-                  </div>
-                </div>
-                <div class="ph3">
-                  <div class="flex mt3">
-                    <i class="f7 gold mr1 fas fa-star"></i>
-                    <i class="f7 gold mr1 fas fa-star"></i>
-                    <i class="f7 gold mr1 fas fa-star"></i>
-                    <i class="f7 gold mr1 fas fa-star"></i>
-                    <i class="f7 light-yellow mr2 fas fa-star"></i>
-                    <span class="f7">4.<%= rand(0..9) %>	(<%= rand(4..23) %>)</span>
-                  </div>
-                  <p class="mt3"><%= randomword(["Enjoy exceptional quality images, day or night with 20.3 Megapixels HS system", "Canon PowerShot G1 X Mark III Extra long title that go over 3 lines", "Canon PowerShot G1 X Mark III", "Canon PowerShot SX730 HS Silver", "Canon PowerShot G9 X Mark II Silver"]) %></p>
-                  <% if rand(2) == 1  %>
-                  <span class="promotion ttu bg-cardinal-pink white dib white-space ph2 pv1 f7">Save £80 at checkout</span>
-                  <% end %>
-                  <ul class="f7 pl3">
-                    <li class="mb2">3x fast aperture optical zoom</li>
-                    <li class="mb2">24.2 MP APS-C Sensor</li>
-                    <li class="mb2">Dual Pixel CMOS AF</li>
-                  </ul>
-                </div>
-                <div class="ph3 pb4 mt-auto">
-                  <p class="f4 mv2">£1,089.99</p>
-                  <a href="#" class="dib ph3 pv2 ba b--olive olive br-pill f6"><i class="olive mr2 fas fa-shopping-basket"></i> View product</a>
-                </div>
-              </div>
+              <%= partial "partials/tile" %>
             <% end %>
           </div>
       </div>
