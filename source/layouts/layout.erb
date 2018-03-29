@@ -19,5 +19,11 @@
   <body>
     <%= partial "partials/nav" %>
     <%= yield %>
+    <script>
+      // Center all the things!
+      var rellax = new Rellax('.rellax', {
+        center: true
+      });
+    </script>
   </body>
 </html>
