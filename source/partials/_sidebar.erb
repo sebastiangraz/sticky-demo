@@ -6,7 +6,10 @@
     </p>
     <ul class="list pa0 ma0" data-role="TOGGLELIST">
       <% (1..5).each do |i| %>
-        <li class="ph3 pv2 f7 f6-ns bb b--black-10"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
+      <div class="pv2 bb b--black-10 flex flex-row items-center">
+        <input data-role="CHECKBOX" class="mr2" type="checkbox">
+        <li class="f7 f6-ns"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
+      </div>
       <% end %>
     </ul>
   </div>

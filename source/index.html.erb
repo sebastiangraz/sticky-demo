@@ -2,19 +2,32 @@
 title: Canon
 ---
 <div class="row">
-  <h1 class="mt4 mb4 tungsten ttu f2 f1-ns">Compact Digital Cameras</h1>
+
+    <div data-role="MOBILESIDEBAR" class="closed w-80 fixed top-0 left-0 vh-100 bg-white pa3 z-2 overflow-scroll">
+      <%= partial "partials/sidebar" %>
+    </div>
+    <div data-role="OVERLAY" class="closed w-100 vh-100 fixed top-0 left-0 z-1 bg-black-70">
+    </div>
+
+  <h1 class="mt4 mb4 tungsten ttu f2 f1-ns antialiased">Compact Digital Cameras</h1>
 
   <div class="main-content flex-ns flex-row justify-between">
       <div class="sidebar nevada w-100 w-40-m w-20-l">
         <div class="sidebar__inner cf">
-          <div class="mb3 pa3 bt b--black-10">Filter by:</div>
+          <div class="db dn-ns mv3 flex justify-center absolute relative-ns w-100">
+            <a data-role="OPENFILTER" onclick="return false;" href="#" class="w-100 tc dib ph3 pv2 ba bg-white b--olive olive br-pill f6">
+              <i class="olive mr2 fas fa-filter"></i> Filter products
+              <span class="pv1 ph2 ml2 bg-olive white br-pill" data-role="COUNTER"></span>
+            </a>
+          </div>
+          <div class="dn db-ns mb3 pa3 bt b--black-10">Filter products</div>
           <div class="dn db-ns">
             <%= partial "partials/sidebar" %>
           </div>
         </div>
       </div>
       <div class="content pl4-ns w-100 w-60-m w-80-l">
-          <div data-role="SORTING" class="mb4 flex flex-column-m flex-row-ns justify-between bt b--black-10 pt4 items-center">
+          <div data-role="SORTING" class="mb4 flex flex-column-m flex-row-ns justify-between bt b--black-10 pt5 pt4-ns items-center">
             <div class="dn dn-m db-l mb3-m">
               <div class="flex" data-role="FLUSHBORDER GROUPPILL">
                 <span class="ph2 pv1 flex items-center"><i class="f7 mr2 nevada fas fa-th"></i> <span class="f7 tracked ttu">Grid</span></span>
@@ -54,10 +67,11 @@ title: Canon
 
 <script type="text/javascript">
   var sidebar = new StickySidebar('.sidebar', {
-    topSpacing: 32,
+    topSpacing: 0,
     resizeSensor: true,
-    minWidth: 480,
-    bottomSpacing: 32,
+    // minWidth: 480,
+    stickyClass: 'is-affixed',
+    bottomSpacing: 0,
     containerSelector: '.main-content',
     innerWrapperSelector: '.sidebar__inner'
   });
