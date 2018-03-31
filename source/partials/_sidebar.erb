@@ -1,14 +1,31 @@
 <% (1..8).each do |i| %>
   <div class="mb4">
-    <p class="bb b--black-20 ttu black ma0 pv2 pl3 flex justify-between items-center">
+    <p class="bb b--black-20 ttu black ma0 pv2 flex justify-between items-center">
       <span class="f7 tracked"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></span>
       <span data-role="TOGGLE" class="toggle dib ph2 tc br1 hover-bg-black-10"><i class="f7 nevada fas fa-angle-up"></i></span>
     </p>
     <ul class="list pa0 ma0" data-role="TOGGLELIST">
       <% (1..5).each do |i| %>
-      <div class="pv2 bb b--black-10 flex flex-row items-center">
-        <input data-role="CHECKBOX" class="mr2" type="checkbox">
-        <li class="f7 f6-ns"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)</li>
+
+      <div class="flex flex-row items-center">
+        <label class="container f6 mv2"><%= randomword(["PowerShot Cameras", "Superzoom Cameras", "IXUS Cameras", "Bridge Cameras", "Pocket Cameras"]).titleize %> (<%= rand(5..30) %>)
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <!-- <div class="checkbox-small">
+          <label>
+            <input type="checkbox" value="" /> Click Here to Check This
+          </label>
+        </div> -->
+        <!-- <div class="checkbox-small">
+          <label>
+            <input class="fl" type="checkbox">
+            Add to compare
+          </label>
+        </div> -->
+        <!-- <input data-role="CHECKBOX" class="mr2" type="checkbox"> -->
+
+        <!-- <li class="f7 f6-ns"></li> -->
       </div>
       <% end %>
     </ul>
