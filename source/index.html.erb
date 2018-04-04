@@ -9,7 +9,7 @@ title: Canon
     <div data-role="OVERLAY" class="closed w-100 vh-100 fixed top-0 left-0 z-1 bg-black-70">
     </div>
 
-  <h1 class="mt4 mb4 tungsten ttu f2 f1-ns antialiased">Compact Digital Cameras</h1>
+  <h1 class="mv3 tungsten ttu f2 f1-ns antialiased">Compact Digital Cameras</h1>
 
   <div class="main-content flex-ns flex-row justify-between">
       <div class="sidebar nevada w-100 w-40-m w-20-l">
@@ -20,8 +20,12 @@ title: Canon
               <span class="pv1 ph2 ml2 bg-olive white br-pill" data-role="COUNTER"></span>
             </a>
           </div>
-          <div class="dn db-ns mb3 pv3 bt b--black-10">Filter products</div>
-          <div class="dn db-ns">
+          <div class="dn db-ns pv3 bt b--black-10">Filter products</div>
+          <a data-role="HIDEFILTERS" class="f7 mb4 dib blue" href="/#">
+            <i class="mr1 fas fa-eye-slash"></i>
+            <span>Hide all filters</span>
+          </a>
+          <div class="dn db-ns" data-role="FILTERS">
             <%= partial "partials/sidebar" %>
           </div>
         </div>
