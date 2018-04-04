@@ -12,40 +12,37 @@ document.addEventListener('DOMContentLoaded', function () {
     elem.setAttribute('data-state', elem.getAttribute('data-state') === one ? two : one);
   };
 
-  // document.querySelector('[data-role="HIDEFILTERS"]').onclick = function () {
-  //   toggleText(this.querySelector('span'), 'Hide all filters', 'Show all filters');
-  //
-  //   let test = document.querySelectorAll('[data-role="TOGGLELIST"]');
-  //   for (var e of test) {
-  //     toggleState(e, 'closed', 'open');
-  //   }
-  // };
+  document.querySelector('[data-role="TOGGLEFILTERS"]').onclick = function () {
+    $(this)
+       .find('[data-fa-i2svg]')
+       .toggleClass('fa-eye')
+       .toggleClass('fa-eye-slash');
+    toggleText(this.querySelector('span'), 'Hide all filters', 'Show all filters');
+    let sidebarArray = document.querySelectorAll('[data-role="DESKTOPSIDEBAR"] [data-role="TOGGLELIST"]');
+    toggleState(this, 'closed', 'open');
+    if(this.getAttribute('data-state') === 'closed') {
+      Array.from(sidebarArray).forEach(a =>
+        // console.log(a)
+        a.setAttribute('data-state', 'closed')
+      )
+    } else {
+      Array.from(sidebarArray).forEach(a =>
+        // console.log(a)
+        a.setAttribute('data-state', 'open')
+      )
+    }
+  };
+
 
   let sidebarArray = document.querySelectorAll('[data-role="TOGGLE"]');
 
   Array.from(sidebarArray).forEach(a =>
     a.onclick = function () {
-      console.log();
       toggleState(this.parentElement.nextElementSibling, 'closed', 'open');
     }
     // console.log(a.parentElement)
   )
 
-  // $('[data-role*="HIDEFILTERS"]').on('click', function(){
-  //   let test = document.querySelectorAll('[data-role="TOGGLELIST"]');
-  //   for (var e of test) {
-  //     console.log(e);
-  //     toggleState(e, 'closed', 'open');
-  //   }
-  // });
-
-  // $('[data-role*="TOGGLE"]').on('click', function(){
-  //
-  // });
-
-  // $('[data-role*="TOGGLE"]').on('click', function () {
-  //   $(this).parent().next().toggleClass('hidden')
-  // });
 
   $('[data-role*="OPENFILTER"]').on('click', function(){
     $('body').addClass('overflow-hidden');
@@ -59,13 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
     $(this).addClass('closed').removeClass('open')
   })
 
-
   $('[data-role*="COUNTER"]').hide();
-
 
   $('[data-role*="CHECKBOX"]').each(function( ) {
     $(this).on('click', function(){
-      var count = document.querySelectorAll('[data-role*="CHECKBOX"]:checked').length;
+      var count = document.querySelectorAll('[data-role*="MOBILESIDEBAR"] [data-role*="CHECKBOX"]:checked').length;
       $('[data-role*="COUNTER"]').show();
       $('[data-role*="COUNTER"]').html(count);
       if (count == 0) {
@@ -74,15 +69,4 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   });
 
-  // document.querySelector('.toggle').addEventListener("click", purchase, false)
-  //
-  // function purchase() {
-  //   console.log('toggle');
-  //   // document.querySelector('.purchase').classList.toggle('active');
-  //   // if (document.querySelector('.purchase').classList.contains('active')) {
-  //   //   document.querySelector('#purchase').innerHTML = 'Close ↑'
-  //   // } else {
-  //   //   document.querySelector('#purchase').innerHTML = 'Purchase ↓'
-  //   // }
-  // }
 });
