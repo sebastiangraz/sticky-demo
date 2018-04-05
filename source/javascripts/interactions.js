@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
     $('[data-role*="MOBILESIDEBAR"]').addClass('open').removeClass('closed')
   })
 
+  $('[data-role*="CLOSESIDEBAR"]').on('click', function(){
+    $('body').removeClass('overflow-hidden');
+    $('[data-role*="MOBILESIDEBAR"]').addClass('closed').removeClass('open')
+  })
+
   $('[data-role*="OVERLAY"]').on('click', function(){
     $('body').removeClass('overflow-hidden');
     $('[data-role*="MOBILESIDEBAR"]').addClass('closed').removeClass('open')

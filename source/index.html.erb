@@ -2,11 +2,14 @@
 title: Canon
 ---
 <div class="row">
-
-    <div data-role="MOBILESIDEBAR" class="closed w-80 fixed top-0 left-0 vh-100 bg-white pa3 z-2 overflow-scroll touch-scroll">
-      <%= partial "partials/sidebar" %>
-    </div>
-    <div data-role="OVERLAY" class="closed w-100 vh-100 fixed top-0 left-0 z-1 bg-black-70">
+    <div data-role="MOBILESIDEBAR" class="z-2 w-100 closed fixed top-0 left-0 vh-100">
+      <div class="bg-curious-blue hover-bg-malibu pointer" data-role="CLOSESIDEBAR">
+      </div>
+      <div data-role="SIDEBAR" class="z-2 w-90 absolute bg-white pv3 pr4 pl3 overflow-scroll touch-scroll vh-100">
+        <%= partial "partials/sidebar" %>
+      </div>
+      <div data-role="OVERLAY" class="closed w-100 vh-100 fixed top-0 left-0 z-1 bg-black-70">
+      </div>
     </div>
 
   <h1 class="mv3 tungsten ttu f2 f1-ns antialiased">Compact Digital Cameras</h1>
