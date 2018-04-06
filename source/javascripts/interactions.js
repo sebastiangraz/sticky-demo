@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // select the target node
+  let target = document.body;
+  // create an observer instance
+  let observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+          // console.log(mutation.target.dataset.state);
+          if (mutation.target.dataset.state == 'open') {
+            mutation.target.parentElement.querySelector('[data-fa-i2svg]').classList.add('fa-angle-up');
+          } else {
+            mutation.target.parentElement.querySelector('[data-fa-i2svg]').classList.add('fa-angle-down');
+          }
+      });
+  });
+
+  // configuration of the observer:
+  let config = { attributes: true, childList: true, characterData: true, subtree: true }
+
+  let togglelist = document.querySelectorAll('[data-role="TOGGLELIST"]');
+  for (var i = 0; i < togglelist.length; i++) {
+    observer.observe(togglelist[i], config);
+  }
+
   let toggleText = function(elem, t1, t2){
     if (elem.innerHTML === t1) {
       elem.innerHTML = t2;
@@ -37,12 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
   let sidebarArray = document.querySelectorAll('[data-role="TOGGLE"]');
 
   Array.from(sidebarArray).forEach(a =>
+
     a.onclick = function () {
       toggleState(this.parentElement.nextElementSibling, 'closed', 'open');
     }
     // console.log(a.parentElement)
   )
-
 
   $('[data-role*="OPENFILTER"]').on('click', function(){
     $('body').addClass('overflow-hidden');
