@@ -11,6 +11,9 @@
 .antialiased {
   -webkit-font-smoothing: antialiased;
 }
+.b {
+  -webkit-font-smoothing:antialiased;
+}
 .fit-contain {
   object-fit: contain;
 }
@@ -22,7 +25,13 @@
 
 @font-face {
   font-family: 'gotham';
+  font-weight: regular;
   src:  url('/fonts/Gotham-Book.woff') format('woff'),
+}
+@font-face {
+  font-family: 'gotham';
+  font-weight: bold;
+  src:  url('/fonts/Gotham-Medium.woff') format('woff'),
 }
 
 @font-face {
@@ -46,7 +55,6 @@
 }
 body {
   font-family: gotham;
-  // -webkit-font-smoothing:antialiased;
 }
 
 h1, h2 ,h3, h4, h5, h6 {

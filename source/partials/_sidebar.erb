@@ -1,10 +1,10 @@
 <% (1..8).each do |i| %>
   <div class="mb4">
     <p class="bb b--black-20 mb1 ttu black ma0 pv2 flex justify-between items-center">
-      <span class="f7 tracked"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></span>
+      <span class="f7 tracked b"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></span>
       <span data-role="TOGGLE" class="toggle dib ph2 tc br1 hover-bg-black-10"><i class="f7 nevada fas fa-angle-up"></i></span>
     </p>
-    <ul class="list pa0 ma0" data-role="TOGGLELIST">
+    <ul class="list pa0 ma0" data-role="TOGGLELIST" data-state="closed">
       <% (1..rand(3..5)).each do |i| %>
 
       <div class="flex flex-row items-center">
