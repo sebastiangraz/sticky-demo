@@ -69,18 +69,32 @@ a {
   }
 }
 
-[data-role*="TOGGLELIST"] {
+[data-role*="SINGLEFACET"] {
   &[data-state=open] {
-    display: block;
-    transform: translateY(0);
-    opacity: 1;
-    animation: anim .4s cubic-bezier(.05,.67,.32,.97);
+    [data-role="TOGGLE"]::before {
+      display: none;
+      font-family: "Font Awesome 5 Solid";
+      content: "\f106";
+    }
+    [data-role*="TOGGLELIST"]{
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+      animation: anim .4s cubic-bezier(.05,.67,.32,.97);
+    }
   }
   &[data-state=closed] {
-    display: none;
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: all .4s cubic-bezier(.05,.67,.32,.97);
+    [data-role="TOGGLE"]::before {
+      display: none;
+      font-family: "Font Awesome 5 Solid";
+      content: "\f107";
+    }
+    [data-role*="TOGGLELIST"]  {
+      display: none;
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all .4s cubic-bezier(.05,.67,.32,.97);
+    }
   }
 }
 

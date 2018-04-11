@@ -12,28 +12,30 @@ document.addEventListener('DOMContentLoaded', function () {
     elem.setAttribute('data-state', elem.getAttribute('data-state') === one ? two : one);
   };
 
-  // select the target node
-  let target = document.body;
-  // create an observer instance
-  let observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-          // console.log(mutation.target.dataset.state);
-          if (mutation.target.dataset.state == 'open') {
-            mutation.target.parentElement.querySelector('[data-fa-i2svg]').classList.add('fa-angle-up');
-          } else {
-            mutation.target.parentElement.querySelector('[data-fa-i2svg]').classList.add('fa-angle-down');
-          }
-      });
-  });
+  // // select the target node
+  // let target = document.body;
+  // // create an observer instance
+  // let observer = new MutationObserver(function(mutations) {
+  //     mutations.forEach(function(mutation) {
+  //         console.log(mutation.target.parentElement.parentElement.dataset.state);
+  //         // console.log(mutation.target.dataset.state);
+  //         // if (mutation.target.dataset.state == 'open') {
+  //         //   mutation.target.parentElement.querySelector('[data-fa-i2svg]').classList.add('fa-angle-up');
+  //         // } else {
+  //         //   mutation.target.parentElement.querySelector('[data-fa-i2svg]').classList.add('fa-angle-down');
+  //         // }
+  //     });
+  // });
+  //
+  // // configuration of the observer:
+  // let config = { attributes: true, childList: true, characterData: true, subtree: true }
+  //
+  // let togglelist = document.querySelectorAll('[data-role="SINGLEFACET"]');
+  //
+  // for (var i = 0; i < togglelist.length; i++) {
+  //   observer.observe(togglelist[i], config);
+  // }
 
-  // configuration of the observer:
-  let config = { attributes: true, childList: true, characterData: true, subtree: true }
-
-  let togglelist = document.querySelectorAll('[data-role="TOGGLELIST"]');
-
-  for (var i = 0; i < togglelist.length; i++) {
-    observer.observe(togglelist[i], config);
-  }
 
 
   document.querySelector('[data-role="TOGGLEFILTERS"]').onclick = function () {
@@ -42,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
        .toggleClass('fa-eye')
        .toggleClass('fa-eye-slash');
     toggleText(this.querySelector('span'), 'Hide all filters', 'Show all filters');
-    let sidebarArray = document.querySelectorAll('[data-role="DESKTOPSIDEBAR"] [data-role="TOGGLELIST"]');
+
+    let sidebarArray = document.querySelectorAll('[data-role="DESKTOPSIDEBAR"] [data-role="SINGLEFACET"]');
     toggleState(this, 'closed', 'open');
     if(this.getAttribute('data-state') === 'closed') {
       Array.from(sidebarArray).forEach(a =>
@@ -62,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
   Array.from(sidebarArray).forEach(a =>
 
     a.onclick = function () {
-      toggleState(this.parentElement.nextElementSibling, 'closed', 'open');
+      toggleState(this.parentElement.parentElement, 'closed', 'open');
     }
   )
 
