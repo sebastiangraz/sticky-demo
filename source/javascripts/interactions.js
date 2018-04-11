@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
   Array.from(sidebarArray).forEach(a =>
 
     a.onclick = function () {
-      toggleState(this.parentElement.parentElement, 'closed', 'open');
+      toggleState(this.parentElement, 'closed', 'open');
     }
   )
 

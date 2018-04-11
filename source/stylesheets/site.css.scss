@@ -68,10 +68,15 @@ a {
     color: #111;
   }
 }
-
+[data-role="TOGGLE"]:hover{
+  cursor: pointer;
+  [data-role="TOGGLEARROW"] {
+    background: rgba(0,0,0,0.1)
+  }
+}
 [data-role*="SINGLEFACET"] {
   &[data-state=open] {
-    [data-role="TOGGLE"]::before {
+    [data-role="TOGGLEARROW"]::before {
       display: none;
       font-family: "Font Awesome 5 Solid";
       content: "\f106";
@@ -84,7 +89,7 @@ a {
     }
   }
   &[data-state=closed] {
-    [data-role="TOGGLE"]::before {
+    [data-role="TOGGLEARROW"]::before {
       display: none;
       font-family: "Font Awesome 5 Solid";
       content: "\f107";

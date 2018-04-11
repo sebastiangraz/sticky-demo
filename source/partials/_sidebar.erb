@@ -1,8 +1,8 @@
 <% (1..8).each do |i| %>
   <div class="mb4" data-role="SINGLEFACET" data-state="<%= randomword(['open', 'closed']) %>">
-    <p class="bb b--black-20 mb1 ttu black ma0 pv2 flex justify-between items-center">
+    <p data-role="TOGGLE" class="nevada hover-black bb b--black-20 mb1 ttu ma0 pv2 flex justify-between items-center">
       <span class="f7 tracked b"><%= randomword(["Price Range", "Categories", "Offers", "Best for", "Colour"]).titleize %></span>
-      <span data-role="TOGGLE" class="toggle dib ph2 pv1 tc br1 hover-bg-black-10 f7"></span>
+      <span data-role="TOGGLEARROW" class="toggle dib ph2 pv1 tc br1 f7"></span>
     </p>
     <ul class="list pa0 ma0" data-role="TOGGLELIST">
       <% (1..rand(3..5)).each do |i| %>
