@@ -76,10 +76,8 @@ a {
 }
 [data-role*="SINGLEFACET"] {
   &[data-state=open] {
-    [data-role="TOGGLEARROW"]::before {
-      display: none;
-      font-family: "Font Awesome 5 Solid";
-      content: "\f106";
+    svg {
+      transform: rotate(180deg);
     }
     [data-role*="TOGGLELIST"]{
       display: block;
@@ -89,10 +87,8 @@ a {
     }
   }
   &[data-state=closed] {
-    [data-role="TOGGLEARROW"]::before {
-      display: none;
-      font-family: "Font Awesome 5 Solid";
-      content: "\f107";
+    svg {
+      transform: rotate(0deg);
     }
     [data-role*="TOGGLELIST"]  {
       display: none;
